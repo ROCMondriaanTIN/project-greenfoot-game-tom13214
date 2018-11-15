@@ -44,11 +44,13 @@ public class Hero extends Mover {
         }
 
         if (Greenfoot.isKeyDown("a")) {
-            velocityX = -2;
+            velocityX = -5;
         } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = 2;
+            velocityX = 5;
         }
     }
+    
+    
 
     public int getWidth() {
         return getImage().getWidth();
