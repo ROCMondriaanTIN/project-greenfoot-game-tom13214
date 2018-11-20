@@ -18,6 +18,16 @@ public class MyWorld extends World {
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
         
+        int[][] testmap = {
+        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},
+        {-1,-1,24,-1,23,-1,27,-1,-1,22,},
+        {-1,-1,-1,-1,-1,-1,-1,-1,-1,25,},
+        {-1,-1,-1,-1,-1,-1,-1,-1,-1,18,},
+        {14,14,14,14,14,14,14,14,14,14,},
+        };
+                
+        
+        
         int[][] map = {
            {16,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,16},
 {14,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14},
@@ -42,7 +52,7 @@ public class MyWorld extends World {
         };
 
         // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
-        TileEngine te = new TileEngine(this, 60, 60, map);
+        TileEngine te = new TileEngine(this, 60, 60, testmap);
         // Declarenre en initialiseren van de camera klasse met de TileEngine klasse 
         // zodat de camera weet welke tiles allemaal moeten meebewegen met de camera
         Camera camera = new Camera(te);
@@ -55,8 +65,8 @@ public class MyWorld extends World {
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        //addObject(hero, 300, 200);
-        addObject(hero, 350, 500);
+        //addObject(hero, 350, 500);
+        addObject(hero, 10, 10);
         //addObject(hero, 3000, 200);
         addObject(new Enemy(), 3800, 530);
         
