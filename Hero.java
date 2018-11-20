@@ -67,48 +67,73 @@ public class Hero extends Mover {
         setImage("p2_stand.png");
     }
 
+    private void removeTile(Tile tile) {
+        tile.getImage().setTransparency(0);
+        tile.isSolid = false;
+    }
+
     @Override
     public void act() {
-        for (Tile tile : getIntersectingObjects(Tile.class))
-        {
+        for (Tile tile : getIntersectingObjects(Tile.class)) {
 
+            if (tile.getImage().toString().contains("keyBlue")) {
+                removeTile(tile);
+            }
 
-            if (tile.getImage().toString().contains("keyBlue")){
-            getWorld().removeObject(tile);
-            }}
-        
-        
-        if (Greenfoot.isKeyDown("p")){
-        velocityY =-20;}
-        
-        
-        for (Actor actor : getIntersectingObjects(Tile.class)) {
-            Tile tile = (Tile) actor;
-            if (tile.getImage().toString().contains("coinGold")) {
-                getWorld().removeObject(tile);
-                
-            }else if (tile.getImage().toString().contains("keyBlue")) {
-                //tile.setImage("keyRed.png");
-                
-                
-                
-                // Loop door alle tiles die de world vast houd
-                for(Tile doorTile: getWorld().getObjects(Tile.class)) {
-                    // als de tile die ik heb gevonden (doorTile) het plaatje lock_blue bevat dan
-                    if (doorTile.getImage().toString().contains("lock_blue")) {
-                        // Verwijder uit de wereld
-                        getWorld().removeObject(doorTile);
-                        
+            if (tile.getImage().toString().contains("keyRed")) {
+                removeTile(tile);
+            }
+
+            if (tile.getImage().toString().contains("keyGreen")) {
+                removeTile(tile);
+            }
+
+        }
+
+        if (Greenfoot.isKeyDown("p")) {
+            velocityY = -20;
+        }
+
+        for (Tile tile : getIntersectingObjects(Tile.class)) {
+            if(tile != null) {
+                if (tile.getImage().toString().contains("coinGold")) {
+                    removeTile(tile);
+
+                } else if (tile.getImage().toString().contains("keyBlue")) {
+                    removeTile(tile);
+                     // Loop door alle tiles die de world vast houd
+                    for (Tile doorTile : getWorld().getObjects(Tile.class)) {
+                        // als de tile die ik heb gevonden (doorTile) het plaatje lock_blue bevat dan
+                        if (doorTile.getImage().toString().contains("lock_blue")) {
+                            // Verwijder uit de wereld
+                            removeTile(doorTile);
+
+                        }
+                    }
+                } else if (tile.getImage().toString().contains("keyRed")) {
+                    removeTile(tile);
+                     // Loop door alle tiles die de world vast houd
+                    for (Tile doorTile : getWorld().getObjects(Tile.class)) {
+                        // als de tile die ik heb gevonden (doorTile) het plaatje lock_blue bevat dan
+                        if (doorTile.getImage().toString().contains("lock_red")) {
+                            // Verwijder uit de wereld
+                            removeTile(doorTile);
+
+                        }
+                    }
+                } else if (tile.getImage().toString().contains("keyGreen")) {
+                    removeTile(tile);
+                    for (Tile doorTile : getWorld().getObjects(Tile.class)) {
+                        // als de tile die ik heb gevonden (doorTile) het plaatje lock_blue bevat dan
+                        if (doorTile.getImage().toString().contains("lock_green")) {
+                            // Verwijder uit de wereld
+                            removeTile(doorTile);
+
+                        }
                     }
                 }
-              
-                
             }
         }
-        
-                
-            
-        
 
         for (Tile tile : getIntersectingObjects(Tile.class)) {
             //Tile tile = (Tile) actor;
@@ -147,7 +172,6 @@ public class Hero extends Mover {
             velocityY = gravity;
         }
         applyVelocity();
-        
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
@@ -160,28 +184,36 @@ public class Hero extends Mover {
     private double invert(double x) {
         return x * -1;
     }
-    
+
     private void onGroundHandler() {
         width = getImage().getWidth() / 2;
 
         Boolean successRate = false;
 
         for (Tile tile : getObjectsAtOffset(0, getImage().getHeight() / 2 + 1, Tile.class)) {
-            if (tile.isSolid) successRate = true;
+            if (tile.isSolid) {
+                successRate = true;
+            }
         }
         if (!successRate) {
             for (Tile tile : getObjectsAtOffset(this.width - 3, getImage().getHeight() / 2 + 1, Tile.class)) {
-                if (tile.isSolid) successRate = true;
+                if (tile.isSolid) {
+                    successRate = true;
+                }
             }
             if (!successRate) {
                 for (Tile tile : getObjectsAtOffset((int) invert(this.width) + 3, getImage().getHeight() / 2 + 1, Tile.class)) {
-                    if (tile.isSolid) successRate = true;
+                    if (tile.isSolid) {
+                        successRate = true;
+                    }
                 }
             }
         }
 
         for (Tile tile : getObjectsAtOffset(0, getImage().getHeight() / 2 + 1, Tile.class)) {
-            if (tile.isSolid) successRate = true;
+            if (tile.isSolid) {
+                successRate = true;
+            }
         }
         isOnGround = successRate;
     }
