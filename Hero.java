@@ -45,6 +45,9 @@ public class Hero extends Mover {
     private int frame = 1;
     private static int teller = 1;
     public static boolean keyCollect = false;
+    public static boolean keyCollectRed = false;
+    public static boolean keyCollectBlue = false;
+    public static boolean keyCollectGreen = false;
     public static boolean keyNotFound = false;
 
     public Hero() {
@@ -101,6 +104,7 @@ public class Hero extends Mover {
 
                 } else if (tile.getImage().toString().contains("keyBlue")) {
                     removeTile(tile);
+                    keyCollectBlue = true;
                      // Loop door alle tiles die de world vast houd
                     for (Tile doorTile : getWorld().getObjects(Tile.class)) {
                         // als de tile die ik heb gevonden (doorTile) het plaatje lock_blue bevat dan
@@ -112,6 +116,7 @@ public class Hero extends Mover {
                     }
                 } else if (tile.getImage().toString().contains("keyRed")) {
                     removeTile(tile);
+                    keyCollectRed = true;
                      // Loop door alle tiles die de world vast houd
                     for (Tile doorTile : getWorld().getObjects(Tile.class)) {
                         // als de tile die ik heb gevonden (doorTile) het plaatje lock_blue bevat dan
@@ -123,6 +128,7 @@ public class Hero extends Mover {
                     }
                 } else if (tile.getImage().toString().contains("keyGreen")) {
                     removeTile(tile);
+                    keyCollectGreen = true;
                     for (Tile doorTile : getWorld().getObjects(Tile.class)) {
                         // als de tile die ik heb gevonden (doorTile) het plaatje lock_blue bevat dan
                         if (doorTile.getImage().toString().contains("lock_green")) {
