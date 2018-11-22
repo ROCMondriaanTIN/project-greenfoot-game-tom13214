@@ -23,13 +23,11 @@ public class Hero extends Mover {
     private GreenfootImage walkIm9;
     private GreenfootImage walkIm10;
     private GreenfootImage walkIm11;
-    
-    
+
     private GreenfootImage P1;
     private GreenfootImage P2;
     private GreenfootImage P3;
-    
-    
+
     private int width;
 
     private boolean isOnGround;
@@ -45,10 +43,10 @@ public class Hero extends Mover {
     private int walking = 1;
 
     private String richting = "right";
-    
+
     private boolean geraakt = false;
     private int pause = 50;
-    static int levens = 2;
+    static int levens = 1;
     public static boolean canJump;
     public int animationCounter = 0;
     private int frame = 1;
@@ -76,23 +74,17 @@ public class Hero extends Mover {
         walkIm9 = new GreenfootImage("p2_walk9.png");
         walkIm10 = new GreenfootImage("p2_walk10.png");
         walkIm11 = new GreenfootImage("p2_walk11.png");
-        
+
         //P1 = new GreenfootImage("p1_walk01");
         //P2 = new GreenfootImage("p2_walk01");
         //P3 = new GreenfootImage("p3_walk01");
-        
         setImage("p2_stand.png");
     }
-    
-    
-    
 
     private void removeTile(Tile tile) {
         tile.getImage().setTransparency(0);
         tile.isSolid = false;
     }
-    
-    
 
     @Override
     public void act() {
@@ -115,44 +107,40 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("p")) {
             velocityY = -20;
         }
-        
+
         if (Greenfoot.isKeyDown("i")) {
             levens = 1;
         }
-        
+
         if (Greenfoot.isKeyDown("o")) {
             levens = 2;
         }
-        
+
         if (Greenfoot.isKeyDown("u")) {
             levens = 0;
         }
-        
+
         if (Greenfoot.isKeyDown("z")) {
             setImage("p2_walk1.png");
         }
-        
+
         if (Greenfoot.isKeyDown("x")) {
             setImage("p2_stand.png");
         }
-        
+
         if (Greenfoot.isKeyDown("c")) {
             setImage("p2_walk6.png");
         }
-        
-        
-        
-        
 
         for (Tile tile : getIntersectingObjects(Tile.class)) {
-            if(tile != null) {
+            if (tile != null) {
                 if (tile.getImage().toString().contains("coinGold")) {
                     removeTile(tile);
 
                 } else if (tile.getImage().toString().contains("keyBlue")) {
                     removeTile(tile);
                     keyCollectBlue = true;
-                     // Loop door alle tiles die de world vast houd
+                    // Loop door alle tiles die de world vast houd
                     for (Tile doorTile : getWorld().getObjects(Tile.class)) {
                         // als de tile die ik heb gevonden (doorTile) het plaatje lock_blue bevat dan
                         if (doorTile.getImage().toString().contains("lock_blue")) {
@@ -164,7 +152,7 @@ public class Hero extends Mover {
                 } else if (tile.getImage().toString().contains("keyRed")) {
                     removeTile(tile);
                     keyCollectRed = true;
-                     // Loop door alle tiles die de world vast houd
+                    // Loop door alle tiles die de world vast houd
                     for (Tile doorTile : getWorld().getObjects(Tile.class)) {
                         // als de tile die ik heb gevonden (doorTile) het plaatje lock_blue bevat dan
                         if (doorTile.getImage().toString().contains("lock_red")) {
@@ -234,8 +222,6 @@ public class Hero extends Mover {
             }
         }
     }
-    
-    
 
     private double invert(double x) {
         return x * -1;
