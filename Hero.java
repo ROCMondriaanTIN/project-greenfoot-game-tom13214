@@ -7,6 +7,8 @@ import greenfoot.*;
  */
 public class Hero extends Mover {
 
+    static boolean heartFull;
+
     private final double gravity;
     private final double acc;
     private final double drag;
@@ -36,10 +38,10 @@ public class Hero extends Mover {
     private int walking = 1;
 
     private String richting = "right";
-
+    
     private boolean geraakt = false;
     private int pause = 50;
-    private int levens = 3;
+    private int levens = 1;
     public static boolean canJump;
     public int animationCounter = 0;
     private int frame = 1;
@@ -69,11 +71,16 @@ public class Hero extends Mover {
         walkIm11 = new GreenfootImage("p2_walk11.png");
         setImage("p2_stand.png");
     }
+    
+    
+    
 
     private void removeTile(Tile tile) {
         tile.getImage().setTransparency(0);
         tile.isSolid = false;
     }
+    
+    
 
     @Override
     public void act() {
@@ -96,6 +103,28 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("p")) {
             velocityY = -20;
         }
+        
+        if (Greenfoot.isKeyDown("o")) {
+            //heartFull = true;
+            //levens --;
+            setImage("p2_stand.png");
+        }
+        
+        if (Greenfoot.isKeyDown("z")) {
+            setImage("p2_walk1.png");
+        }
+        
+        if (Greenfoot.isKeyDown("x")) {
+            setImage("p2_stand.png");
+        }
+        
+        if (Greenfoot.isKeyDown("c")) {
+            setImage("p2_walk6.png");
+        }
+        
+        
+        
+        
 
         for (Tile tile : getIntersectingObjects(Tile.class)) {
             if(tile != null) {
@@ -149,6 +178,7 @@ public class Hero extends Mover {
                     geraakt = true;
 
                     setImage("p1_hurt.png");
+                    heartFull = true;
 
                     pause--;
                     return;
@@ -186,6 +216,8 @@ public class Hero extends Mover {
             }
         }
     }
+    
+    
 
     private double invert(double x) {
         return x * -1;

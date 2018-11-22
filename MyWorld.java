@@ -22,7 +22,7 @@ public class MyWorld extends World {
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},
         {-1,-1,24,-1,23,-1,27,-1,-1,22,},
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,25,},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,18,},
+        {-1,-1,-1,-1,-1,-1,49,-1,13,18,},
         {14,14,14,14,14,14,14,14,14,14,},
         };
                 
@@ -52,7 +52,7 @@ public class MyWorld extends World {
         };
 
         // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
-        TileEngine te = new TileEngine(this, 60, 60, map);
+        TileEngine te = new TileEngine(this, 60, 60, testmap);
         // Declarenre en initialiseren van de camera klasse met de TileEngine klasse 
         // zodat de camera weet welke tiles allemaal moeten meebewegen met de camera
         Camera camera = new Camera(te);
@@ -65,13 +65,14 @@ public class MyWorld extends World {
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        addObject(hero, 350, 500);
-        //addObject(hero, 10, 10);
+        //addObject(hero, 350, 500);
+        addObject(hero, 10, 10);
         //addObject(hero, 3000, 200);
         addObject(new Enemy(), 3800, 530);
-        addObject(new KeyBlue(), 25, 25);
-        addObject(new KeyRed(), 75, 25);
-        addObject(new KeyGreen(), 125, 25);
+        addObject(new KeyBlue(), 30, 25);
+        addObject(new KeyRed(), 80, 25);
+        addObject(new KeyGreen(), 130, 25);
+        addObject(new HeartFull(), 965, 25);
         
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
