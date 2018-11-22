@@ -23,6 +23,13 @@ public class Hero extends Mover {
     private GreenfootImage walkIm9;
     private GreenfootImage walkIm10;
     private GreenfootImage walkIm11;
+    
+    
+    private GreenfootImage P1;
+    private GreenfootImage P2;
+    private GreenfootImage P3;
+    
+    
     private int width;
 
     private boolean isOnGround;
@@ -41,7 +48,7 @@ public class Hero extends Mover {
     
     private boolean geraakt = false;
     private int pause = 50;
-    private int levens = 1;
+    static int levens = 2;
     public static boolean canJump;
     public int animationCounter = 0;
     private int frame = 1;
@@ -69,6 +76,11 @@ public class Hero extends Mover {
         walkIm9 = new GreenfootImage("p2_walk9.png");
         walkIm10 = new GreenfootImage("p2_walk10.png");
         walkIm11 = new GreenfootImage("p2_walk11.png");
+        
+        //P1 = new GreenfootImage("p1_walk01");
+        //P2 = new GreenfootImage("p2_walk01");
+        //P3 = new GreenfootImage("p3_walk01");
+        
         setImage("p2_stand.png");
     }
     
@@ -104,10 +116,16 @@ public class Hero extends Mover {
             velocityY = -20;
         }
         
+        if (Greenfoot.isKeyDown("i")) {
+            levens = 1;
+        }
+        
         if (Greenfoot.isKeyDown("o")) {
-            //heartFull = true;
-            //levens --;
-            setImage("p2_stand.png");
+            levens = 2;
+        }
+        
+        if (Greenfoot.isKeyDown("u")) {
+            levens = 0;
         }
         
         if (Greenfoot.isKeyDown("z")) {

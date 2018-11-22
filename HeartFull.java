@@ -8,14 +8,22 @@
  *
  * @author tom
  */
-public class HeartFull extends Mover 
-{
+public class HeartFull extends Mover {
 
-
-         public void act(){
-    if (Hero.heartFull == true){
-    setImage("hud_heartEmpty.png");}
-    else{
-    setImage("hud_heartFull.png");}}
+    /**
+     *
+     */
+    @Override
+    public void act() {
+        if (Hero.levens == 2) {
+            setImage("hud_heartFull.png");
+        }
+        else if (Hero.levens == 1) {
+            setImage("hud_heartHalf.png");
+        }
+        else if (Hero.levens == 0) {
+            setImage("hud_heartEmpty.png");
+        }
+    }
 
 }
