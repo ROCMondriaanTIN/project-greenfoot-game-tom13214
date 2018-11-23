@@ -56,9 +56,11 @@ public class MyWorld extends World {
         // Declarenre en initialiseren van de camera klasse met de TileEngine klasse 
         // zodat de camera weet welke tiles allemaal moeten meebewegen met de camera
         Camera camera = new Camera(te);
+        
+        CoinCounter cc = new CoinCounter();
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero();
+        Hero hero = new Hero(cc);
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -73,7 +75,8 @@ public class MyWorld extends World {
         addObject(new KeyRed(), 80, 25);
         addObject(new KeyGreen(), 130, 25);
         addObject(new Character(), 967, 28);
-        addObject(new Coin(), 500, 28);
+        addObject(new Coin(), 450, 28);
+        addObject(cc, 500, 30);
         
         
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.

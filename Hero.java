@@ -44,7 +44,7 @@ public class Hero extends Mover {
 
     private String richting = "right";
     
-    static int coins;
+    public static int coins;
 
     private boolean geraakt = false;
     private int pause = 50;
@@ -59,9 +59,13 @@ public class Hero extends Mover {
     public static boolean keyCollectGreen = false;
     public static boolean coinAdded = false;
     public static boolean keyNotFound = false;
-
-    public Hero() {
+    private CoinCounter counter;
+    
+    
+    public Hero(CoinCounter coinCounter) {
         super();
+        this.counter = coinCounter;
+        
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
@@ -147,12 +151,11 @@ public class Hero extends Mover {
         
         for (Tile tile : getIntersectingObjects(Tile.class)) {
             if (tile != null) {
-                if (tile.getImage().toString().contains("coinGold")) {
+                if (tile.getImage().toString().contains("coinGold") && tile.getImage().getTransparency() != 0) {
                     removeTile(tile);
-                    coins ++;
-                    coinAdded = true;
+                    this.counter.addCoin();
 
-                } else if (tile.getImage().toString().contains("keyBlue")) {
+                } else if (tile.getImage().toString().contains("keyBlue") && tile.getImage().getTransparency() != 0) {
                     removeTile(tile);
                     keyCollectBlue = true;
                     // Loop door alle tiles die de world vast houd
@@ -164,7 +167,7 @@ public class Hero extends Mover {
 
                         }
                     }
-                } else if (tile.getImage().toString().contains("keyRed")) {
+                } else if (tile.getImage().toString().contains("keyRed") && tile.getImage().getTransparency() != 0) {
                     removeTile(tile);
                     keyCollectRed = true;
                     // Loop door alle tiles die de world vast houd
@@ -176,7 +179,7 @@ public class Hero extends Mover {
 
                         }
                     }
-                } else if (tile.getImage().toString().contains("keyGreen")) {
+                } else if (tile.getImage().toString().contains("keyGreen")&& tile.getImage().getTransparency() != 0) {
                     removeTile(tile);
                     keyCollectGreen = true;
                     for (Tile doorTile : getWorld().getObjects(Tile.class)) {

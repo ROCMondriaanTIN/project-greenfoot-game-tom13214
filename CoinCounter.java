@@ -1,13 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import greenfoot.*;
 
 /**
  *
  * @author Tom Vollebregt
  */
-public class CoinCounter {
+public class CoinCounter extends Actor {
     
+    private int count = 0;
+    
+    public CoinCounter() {
+        super();
+    }
+    
+    public void addCoin() {
+        count++;
+        if(count > 9) {
+            count = 0;
+        }
+        setImage("hud_" + count + ".png");
+    }
 }
