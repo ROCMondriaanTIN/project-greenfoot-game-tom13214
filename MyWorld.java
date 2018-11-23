@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World {
 
     private CollisionEngine ce;
-    
+    public static int coinX = 200;
     /**
      * Constructor for objects of class MyWorld.
      *
@@ -22,7 +22,7 @@ public class MyWorld extends World {
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},
         {-1,-1,24,-1,23,-1,27,-1,-1,22,},
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,25,},
-        {-1,-1,-1,-1,-1,-1,49,-1,13,18,},
+        {-1,-1,5,5,5,-1,49,-1,13,18,},
         {14,14,14,14,14,14,14,14,14,14,},
         };
                 
@@ -72,7 +72,9 @@ public class MyWorld extends World {
         addObject(new KeyBlue(), 30, 25);
         addObject(new KeyRed(), 80, 25);
         addObject(new KeyGreen(), 130, 25);
-        addObject(new Caracter(), 967, 28);
+        addObject(new Character(), 967, 28);
+        addObject(new Coin(), 500, 28);
+        
         
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
@@ -80,9 +82,27 @@ public class MyWorld extends World {
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
     }
-        
+       
+    
+    
+    
+    
+    
     @Override
     public void act() {
         ce.update();
+        /*if (Hero.coins == 1);
+        {
+            addObject(new Coins(), coinX, 200);
+            coinX += 35;
+            //Hero.coinAdded = false;
+        }
+        else if (Hero.coins == 2);
+        {
+            addObject(new Coins(), coinX, 200);
+            coinX += 35;
+        }*/
     }
+    
+
 }

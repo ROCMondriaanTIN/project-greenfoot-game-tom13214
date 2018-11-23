@@ -43,6 +43,8 @@ public class Hero extends Mover {
     private int walking = 1;
 
     private String richting = "right";
+    
+    static int coins;
 
     private boolean geraakt = false;
     private int pause = 50;
@@ -55,6 +57,7 @@ public class Hero extends Mover {
     public static boolean keyCollectRed = false;
     public static boolean keyCollectBlue = false;
     public static boolean keyCollectGreen = false;
+    public static boolean coinAdded = false;
     public static boolean keyNotFound = false;
 
     public Hero() {
@@ -81,11 +84,16 @@ public class Hero extends Mover {
         setImage("p2_stand.png");
     }
 
+    
+    
     private void removeTile(Tile tile) {
         tile.getImage().setTransparency(0);
         tile.isSolid = false;
     }
 
+    
+    
+    
     @Override
     public void act() {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
@@ -108,18 +116,6 @@ public class Hero extends Mover {
             velocityY = -20;
         }
 
-        if (Greenfoot.isKeyDown("i")) {
-            levens = 1;
-        }
-
-        if (Greenfoot.isKeyDown("o")) {
-            levens = 2;
-        }
-
-        if (Greenfoot.isKeyDown("u")) {
-            levens = 0;
-        }
-
         if (Greenfoot.isKeyDown("z")) {
             setImage("p2_walk1.png");
         }
@@ -132,10 +128,29 @@ public class Hero extends Mover {
             setImage("p2_walk6.png");
         }
 
+        
+        /*
+        if (Greenfoot.isKeyDown("1")) {
+            setImage("p1_walk1.png");
+        }
+        
+        if (Greenfoot.isKeyDown("2")) {
+            setImage("p2_walk1.png");
+        }
+        
+        if (Greenfoot.isKeyDown("3")) {
+            setImage("p3_walk1.png");
+        }
+        */
+        
+        
+        
         for (Tile tile : getIntersectingObjects(Tile.class)) {
             if (tile != null) {
                 if (tile.getImage().toString().contains("coinGold")) {
                     removeTile(tile);
+                    coins ++;
+                    coinAdded = true;
 
                 } else if (tile.getImage().toString().contains("keyBlue")) {
                     removeTile(tile);
@@ -201,11 +216,12 @@ public class Hero extends Mover {
 
             if (levens == 0) {
                 getWorld().removeObject(this);
+                return;
 
             }
             continue;
         }
-        onGroundHandler();
+        updateOnGroundStats();
         handleInput();
 
         velocityX *= drag;
@@ -227,37 +243,33 @@ public class Hero extends Mover {
         return x * -1;
     }
 
-    private void onGroundHandler() {
-        width = getImage().getWidth() / 2;
+    private void updateOnGroundStats() {
+        int dx = getImage().getWidth() / 2;
+        int dy = getImage().getHeight() / 2 + 1;
 
-        Boolean successRate = false;
-
-        for (Tile tile : getObjectsAtOffset(0, getImage().getHeight() / 2 + 1, Tile.class)) {
-            if (tile.isSolid) {
-                successRate = true;
-            }
+        //checks if here is not going up or down
+        if (velocityY != 0) {
+            isOnGround = false;
+            return;
         }
-        if (!successRate) {
-            for (Tile tile : getObjectsAtOffset(this.width - 3, getImage().getHeight() / 2 + 1, Tile.class)) {
-                if (tile.isSolid) {
-                    successRate = true;
+        //checks tile exacly under hero
+        for (Tile tile : getObjectsAtOffset(0, dy, Tile.class)) {
+            if (tile.isSolid) isOnGround = true;
+            break;
+        }
+        //checks if hero is on the edge of a block
+        if (!isOnGround) {
+            for (Tile tile : getObjectsAtOffset(dx - 3, dy, Tile.class)) {
+                if (tile.isSolid) isOnGround = true;
+                break;
+            }
+            if (!isOnGround) {
+                for (Tile tile : getObjectsAtOffset(dx * -1 + 3, dy, Tile.class)) {
+                    if (tile.isSolid) isOnGround = true;
+                    break;
                 }
             }
-            if (!successRate) {
-                for (Tile tile : getObjectsAtOffset((int) invert(this.width) + 3, getImage().getHeight() / 2 + 1, Tile.class)) {
-                    if (tile.isSolid) {
-                        successRate = true;
-                    }
-                }
-            }
         }
-
-        for (Tile tile : getObjectsAtOffset(0, getImage().getHeight() / 2 + 1, Tile.class)) {
-            if (tile.isSolid) {
-                successRate = true;
-            }
-        }
-        isOnGround = successRate;
     }
 
     public void handleInput() {

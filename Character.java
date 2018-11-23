@@ -11,13 +11,18 @@ import greenfoot.Greenfoot;
  *
  * @author tom
  */
-public class Caracter extends Mover {
-public static int timer = 1;
+public class Character extends Mover {
+//public static int timer = 1;
+
+    
     /**
      *
      */
     @Override
     public void act() {
+        
+        
+        
         if (Greenfoot.isKeyDown("1")) {
             setImage("hud_p1.png");
         }
