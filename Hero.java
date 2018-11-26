@@ -151,7 +151,7 @@ public class Hero extends Mover {
         
         for (Tile tile : getIntersectingObjects(Tile.class)) {
             if (tile != null) {
-                if (tile.getImage().toString().contains("coinGold") && tile.getImage().getTransparency() != 0) {
+                if (tile.getImage().toString().contains("star") && tile.getImage().getTransparency() != 0) {
                     removeTile(tile);
                     this.counter.addCoin();
 

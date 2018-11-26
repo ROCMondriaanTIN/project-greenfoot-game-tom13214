@@ -35,7 +35,7 @@ public class TileFactory {
                 tile.isSolid = true;
                 break;
             case 5:
-                tile = new Tile("coinGold.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Tile("star.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.getImage().mirrorVertically();
                 tile.isSolid = false;
                 break;

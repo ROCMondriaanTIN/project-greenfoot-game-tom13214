@@ -11,7 +11,7 @@
 public class Coin extends Mover 
 {
     public void act(){
-    setImage("coinGold.png");
+    setImage("star.png");
         
         
     
