@@ -59,6 +59,10 @@ public class Hero extends Mover {
     public static boolean keyCollectGreen = false;
     public static boolean coinAdded = false;
     public static boolean keyNotFound = false;
+    public static boolean blueOpen = false;
+    public static boolean greenOpen = false;
+    public static boolean redOpen = false;
+    
     private CoinCounter counter;
     
     
@@ -104,14 +108,32 @@ public class Hero extends Mover {
 
             if (tile.getImage().toString().contains("keyBlue")) {
                 removeTile(tile);
+                blueOpen = true;
             }
 
             if (tile.getImage().toString().contains("keyRed")) {
                 removeTile(tile);
+                redOpen = true;
             }
 
             if (tile.getImage().toString().contains("keyGreen")) {
                 removeTile(tile);
+                greenOpen = true;
+            }
+            if (tile.getImage().toString().contains("lock_blue") && (blueOpen == true))
+            {
+                removeTile(tile);
+                
+            }
+            if (tile.getImage().toString().contains("lock_green") && (greenOpen == true))
+            {
+                removeTile(tile);
+                
+            }
+            if (tile.getImage().toString().contains("lock_red") && (redOpen == true))
+            {
+                removeTile(tile);
+                
             }
 
         }
@@ -155,7 +177,8 @@ public class Hero extends Mover {
                     removeTile(tile);
                     this.counter.addCoin();
 
-                } else if (tile.getImage().toString().contains("keyBlue") && tile.getImage().getTransparency() != 0) {
+                }
+                else if (tile.getImage().toString().contains("keyBlue") && tile.getImage().getTransparency() != 0) {
                     removeTile(tile);
                     keyCollectBlue = true;
                     // Loop door alle tiles die de world vast houd
@@ -167,7 +190,8 @@ public class Hero extends Mover {
 
                         }
                     }
-                } else if (tile.getImage().toString().contains("keyRed") && tile.getImage().getTransparency() != 0) {
+                }
+                else if (tile.getImage().toString().contains("keyRed") && tile.getImage().getTransparency() != 0) {
                     removeTile(tile);
                     keyCollectRed = true;
                     // Loop door alle tiles die de world vast houd
@@ -179,7 +203,8 @@ public class Hero extends Mover {
 
                         }
                     }
-                } else if (tile.getImage().toString().contains("keyGreen")&& tile.getImage().getTransparency() != 0) {
+                }
+                else if (tile.getImage().toString().contains("keyGreen")&& tile.getImage().getTransparency() != 0) {
                     removeTile(tile);
                     keyCollectGreen = true;
                     for (Tile doorTile : getWorld().getObjects(Tile.class)) {
