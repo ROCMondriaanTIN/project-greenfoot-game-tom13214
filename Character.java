@@ -6,7 +6,6 @@ import greenfoot.Greenfoot;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author tom
@@ -14,31 +13,28 @@ import greenfoot.Greenfoot;
 public class Character extends Mover {
 //public static int timer = 1;
 
-    
+    public Character() {
+        super();
+        setImage("hud_p1.png");
+    }
+
     /**
      *
      */
     @Override
     public void act() {
-        
-        
-        
+
         if (Greenfoot.isKeyDown("1")) {
             setImage("hud_p1.png");
-        }
-         
-        
-        else if (Greenfoot.isKeyDown("2")) {
+        } else if (Greenfoot.isKeyDown("2")) {
             setImage("hud_p2.png");
-        }
-        
-        else if (Greenfoot.isKeyDown("3")) {
+        } else if (Greenfoot.isKeyDown("3")) {
             setImage("hud_p3.png");
         }
     }
 }
 
-   /* public void act(){
+/* public void act(){
         if (timer == 1)
         {
             setImage("hud_gem_blue.png");
@@ -62,4 +58,4 @@ public class Character extends Mover {
         timer ++;
         
     }}
-    */
+ */

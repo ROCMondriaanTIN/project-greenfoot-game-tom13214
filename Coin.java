@@ -8,12 +8,14 @@
  *
  * @author Tom Vollebregt
  */
-public class Coin extends Mover 
-{
-    public void act(){
-    setImage("star.png");
-        
-        
-    
-    }}
- 
+public class Coin extends Mover {
+
+    public Coin() {
+        super();
+        setImage("star.png");
+    }
+}
+
+//public void act(){
+//setImage("star.png");}
+

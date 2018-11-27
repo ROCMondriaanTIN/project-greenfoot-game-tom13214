@@ -27,11 +27,11 @@ public class Hero extends Mover {
     private GreenfootImage P1;
     private GreenfootImage P2;
     private GreenfootImage P3;
-    
+
     public static boolean collectGem;
 
     public int player = 1;
-    
+
     private int width;
 
     private boolean isOnGround;
@@ -47,7 +47,7 @@ public class Hero extends Mover {
     private int walking = 1;
 
     private String richting = "right";
-    
+
     public static int coins;
 
     private boolean geraakt = false;
@@ -66,14 +66,13 @@ public class Hero extends Mover {
     public static boolean blueOpen = false;
     public static boolean greenOpen = false;
     public static boolean redOpen = false;
-    
+
     private CoinCounter counter;
-    
-    
+
     public Hero(CoinCounter coinCounter) {
         super();
         this.counter = coinCounter;
-        
+
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
@@ -96,28 +95,20 @@ public class Hero extends Mover {
         setImage("p1_stand.png");
     }
 
-    
-    
     private void removeTile(Tile tile) {
         tile.getImage().setTransparency(0);
         tile.isSolid = false;
     }
 
-    
-    
-    
     @Override
     public void act() {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
 
-            
-            
-            
             if (tile.getImage().toString().contains("gemBlue")) {
                 removeTile(tile);
                 collectGem = true;
             }
-            
+
             if (tile.getImage().toString().contains("keyBlue")) {
                 removeTile(tile);
                 blueOpen = true;
@@ -132,20 +123,17 @@ public class Hero extends Mover {
                 removeTile(tile);
                 greenOpen = true;
             }
-            if (tile.getImage().toString().contains("lock_blue") && (blueOpen == true))
-            {
+            if (tile.getImage().toString().contains("lock_blue") && (blueOpen == true)) {
                 removeTile(tile);
-                
+
             }
-            if (tile.getImage().toString().contains("lock_green") && (greenOpen == true))
-            {
+            if (tile.getImage().toString().contains("lock_green") && (greenOpen == true)) {
                 removeTile(tile);
-                
+
             }
-            if (tile.getImage().toString().contains("lock_red") && (redOpen == true))
-            {
+            if (tile.getImage().toString().contains("lock_red") && (redOpen == true)) {
                 removeTile(tile);
-                
+
             }
 
         }
@@ -169,7 +157,6 @@ public class Hero extends Mover {
             //setImage("p1_walk6.png");
         }
 
-        
         /*
         if (Greenfoot.isKeyDown("1")) {
             setImage("p1_walk1.png");
@@ -182,18 +169,14 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("3")) {
             setImage("p3_walk1.png");
         }
-        */
-        
-        
-        
+         */
         for (Tile tile : getIntersectingObjects(Tile.class)) {
             if (tile != null) {
                 if (tile.getImage().toString().contains("star") && tile.getImage().getTransparency() != 0) {
                     removeTile(tile);
                     this.counter.addCoin();
 
-                }
-                else if (tile.getImage().toString().contains("keyBlue") && tile.getImage().getTransparency() != 0) {
+                } else if (tile.getImage().toString().contains("keyBlue") && tile.getImage().getTransparency() != 0) {
                     removeTile(tile);
                     keyCollectBlue = true;
                     // Loop door alle tiles die de world vast houd
@@ -205,8 +188,7 @@ public class Hero extends Mover {
 
                         }
                     }
-                }
-                else if (tile.getImage().toString().contains("keyRed") && tile.getImage().getTransparency() != 0) {
+                } else if (tile.getImage().toString().contains("keyRed") && tile.getImage().getTransparency() != 0) {
                     removeTile(tile);
                     keyCollectRed = true;
                     // Loop door alle tiles die de world vast houd
@@ -218,8 +200,7 @@ public class Hero extends Mover {
 
                         }
                     }
-                }
-                else if (tile.getImage().toString().contains("keyGreen")&& tile.getImage().getTransparency() != 0) {
+                } else if (tile.getImage().toString().contains("keyGreen") && tile.getImage().getTransparency() != 0) {
                     removeTile(tile);
                     keyCollectGreen = true;
                     for (Tile doorTile : getWorld().getObjects(Tile.class)) {
@@ -297,18 +278,24 @@ public class Hero extends Mover {
         }
         //checks tile exacly under hero
         for (Tile tile : getObjectsAtOffset(0, dy, Tile.class)) {
-            if (tile.isSolid) isOnGround = true;
+            if (tile.isSolid) {
+                isOnGround = true;
+            }
             break;
         }
         //checks if hero is on the edge of a block
         if (!isOnGround) {
             for (Tile tile : getObjectsAtOffset(dx - 3, dy, Tile.class)) {
-                if (tile.isSolid) isOnGround = true;
+                if (tile.isSolid) {
+                    isOnGround = true;
+                }
                 break;
             }
             if (!isOnGround) {
                 for (Tile tile : getObjectsAtOffset(dx * -1 + 3, dy, Tile.class)) {
-                    if (tile.isSolid) isOnGround = true;
+                    if (tile.isSolid) {
+                        isOnGround = true;
+                    }
                     break;
                 }
             }
