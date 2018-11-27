@@ -1,8 +1,15 @@
-public class diamant extends Mover 
-{
 
+public class diamant extends Mover {
 
-         public void act(){
-    if (Hero.collectGem == true){
-    setImage("hud_gem_blue.png");}
-         }
+    public diamant() {
+        getImage().setTransparency(0);
+    }
+
+    @Override
+    public void act() {
+        if (Hero.collectGem == true) {
+            setImage("hud_gem_blue.png");
+        }
+    }
+    
+}

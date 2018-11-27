@@ -10,6 +10,7 @@ public class CoinCounter extends Actor {
     
     public CoinCounter() {
         super();
+        setImage("hud_0.png");
     }
     
     public void addCoin() {
