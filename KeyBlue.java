@@ -1,3 +1,5 @@
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,7 +15,7 @@ public class KeyBlue extends Mover
 
 
          public void act(){
-    if (Hero.keyCollectBlue == true){
+    if (Hero.blueOpen == true){
     setImage("hud_keyBlue.png");}
     else{
     setImage("hud_keyBlue_disabled.png");}}

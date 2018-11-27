@@ -27,7 +27,11 @@ public class Hero extends Mover {
     private GreenfootImage P1;
     private GreenfootImage P2;
     private GreenfootImage P3;
+    
+    public static boolean collectGem;
 
+    public int player = 1;
+    
     private int width;
 
     private boolean isOnGround;
@@ -74,22 +78,22 @@ public class Hero extends Mover {
         acc = 0.6;
         drag = 0.8;
 
-        walkIm1 = new GreenfootImage("p2_walk1.png");
-        walkIm2 = new GreenfootImage("p2_walk2.png");
-        walkIm3 = new GreenfootImage("p2_walk3.png");
-        walkIm4 = new GreenfootImage("p2_walk4.png");
-        walkIm5 = new GreenfootImage("p2_walk5.png");
-        walkIm6 = new GreenfootImage("p2_walk6.png");
-        walkIm7 = new GreenfootImage("p2_walk7.png");
-        walkIm8 = new GreenfootImage("p2_walk8.png");
-        walkIm9 = new GreenfootImage("p2_walk9.png");
-        walkIm10 = new GreenfootImage("p2_walk10.png");
-        walkIm11 = new GreenfootImage("p2_walk11.png");
+        walkIm1 = new GreenfootImage("p1_walk1.png");
+        walkIm2 = new GreenfootImage("p1_walk2.png");
+        walkIm3 = new GreenfootImage("p1_walk3.png");
+        walkIm4 = new GreenfootImage("p1_walk4.png");
+        walkIm5 = new GreenfootImage("p1_walk5.png");
+        walkIm6 = new GreenfootImage("p1_walk6.png");
+        walkIm7 = new GreenfootImage("p1_walk7.png");
+        walkIm8 = new GreenfootImage("p1_walk8.png");
+        walkIm9 = new GreenfootImage("p1_walk9.png");
+        walkIm10 = new GreenfootImage("p1_walk10.png");
+        walkIm11 = new GreenfootImage("p1_walk11.png");
 
         //P1 = new GreenfootImage("p1_walk01");
         //P2 = new GreenfootImage("p2_walk01");
         //P3 = new GreenfootImage("p3_walk01");
-        setImage("p2_stand.png");
+        setImage("p1_stand.png");
     }
 
     
@@ -106,6 +110,14 @@ public class Hero extends Mover {
     public void act() {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
 
+            
+            
+            
+            if (tile.getImage().toString().contains("gemBlue")) {
+                removeTile(tile);
+                collectGem = true;
+            }
+            
             if (tile.getImage().toString().contains("keyBlue")) {
                 removeTile(tile);
                 blueOpen = true;
@@ -142,16 +154,19 @@ public class Hero extends Mover {
             velocityY = -20;
         }
 
-        if (Greenfoot.isKeyDown("z")) {
-            setImage("p2_walk1.png");
+        if (Greenfoot.isKeyDown("1")) {
+            player = 1;
+            //setImage("p1_walk1.png");
         }
 
-        if (Greenfoot.isKeyDown("x")) {
-            setImage("p2_stand.png");
+        if (Greenfoot.isKeyDown("2")) {
+            player = 2;
+            //setImage("p1_stand.png");
         }
 
-        if (Greenfoot.isKeyDown("c")) {
-            setImage("p2_walk6.png");
+        if (Greenfoot.isKeyDown("3")) {
+            player = 3;
+            //setImage("p1_walk6.png");
         }
 
         
@@ -310,13 +325,13 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("a")) {
             velocityX = -5;
             direction = "left";
-            animationWalk(getWidth(), getHeight(), 2);
+            animationWalk(getWidth(), getHeight(), player);
         } else if (Greenfoot.isKeyDown("d")) {
             velocityX = 5;
             direction = "right";
-            animationWalk(getWidth(), getHeight(), 2);
+            animationWalk(getWidth(), getHeight(), player);
         } else {
-            animationStand(getWidth(), getHeight(), 2);
+            animationStand(getWidth(), getHeight(), player);
         }
     }
 

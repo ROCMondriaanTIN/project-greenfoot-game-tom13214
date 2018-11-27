@@ -6,6 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author R. Springer
  */
 public class MyWorld extends World {
+    
 
     private CollisionEngine ce;
     public static int coinX = 200;
@@ -19,8 +20,8 @@ public class MyWorld extends World {
         this.setBackground("bg.png");
         
         int[][] testmap = {
-        {-1,-1,-1,-1,-1,-1,-1,13,-1,-1,},
-        {-1,-1,24,-1,23,-1,27,-1,-1,22,},
+        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},
+        {-1,-1,24,-1,23,-1,27,13,-1,22,},
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,25,},
         {-1,-1,5,5,5,-1,49,-1,-1,18,},
         {14,14,14,14,14,14,14,14,14,14,},
@@ -77,6 +78,7 @@ public class MyWorld extends World {
         addObject(new Character(), 967, 28);
         addObject(new Coin(), 450, 28);
         addObject(cc, 500, 30);
+        addObject(new diamant(), 550, 30);
         
         
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
