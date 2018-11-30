@@ -103,7 +103,20 @@ public class Hero extends Mover {
     @Override
     public void act() {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
-
+            
+            if (tile.getImage().toString().contains("hud_p1Alt.png")) {
+                
+                player = 1;
+            }
+            if (tile.getImage().toString().contains("hud_p2Alt.png")) {
+                
+                player = 2;
+            }
+            if (tile.getImage().toString().contains("hud_p3Alt.png")) {
+                
+                player = 3;
+            }
+            
             if (tile.getImage().toString().contains("gemBlue")) {
                 removeTile(tile);
                 collectGem = true;
