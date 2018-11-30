@@ -31,6 +31,14 @@ public class Character extends Mover {
         } else if (Greenfoot.isKeyDown("3")) {
             setImage("hud_p3.png");
         }
+        
+        if (Hero.player == 1) {
+            setImage("hud_p1.png");
+        } else if (Hero.player == 2) {
+            setImage("hud_p2.png");
+        } else if (Hero.player == 3) {
+            setImage("hud_p3.png");
+        }
     }
 }
 

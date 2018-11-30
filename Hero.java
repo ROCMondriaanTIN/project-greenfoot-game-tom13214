@@ -30,7 +30,7 @@ public class Hero extends Mover {
 
     public static boolean collectGem;
 
-    public int player = 1;
+    public static int player = 1;
 
     private int width;
 
@@ -252,7 +252,9 @@ public class Hero extends Mover {
             }
 
             if (levens == 0) {
-                getWorld().removeObject(this);
+                setLocation(300, 200);
+                levens = 1;
+                //getWorld().removeObject(this);
                 return;
 
             }
