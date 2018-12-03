@@ -9,9 +9,9 @@ public class Hero extends Mover {
 
     static boolean heartFull;
 
-    private final double gravity;
-    private final double acc;
-    private final double drag;
+    private double gravity;
+    private double acc;
+    private double drag;
     private GreenfootImage walkIm1;
     private GreenfootImage walkIm2;
     private GreenfootImage walkIm3;
@@ -105,15 +105,18 @@ public class Hero extends Mover {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
             
             if (tile.getImage().toString().contains("hud_p1Alt.png")) {
-                
+                getImage().scale(60, 90);
+                acc = 0.7;
                 player = 1;
             }
             if (tile.getImage().toString().contains("hud_p2Alt.png")) {
-                
+                getImage().scale(45, 60);
+                acc = 1;
                 player = 2;
             }
             if (tile.getImage().toString().contains("hud_p3Alt.png")) {
-                
+                getImage().scale(30, 50);
+                acc = 1.5;
                 player = 3;
             }
             
