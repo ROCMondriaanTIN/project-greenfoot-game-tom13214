@@ -238,7 +238,7 @@ public class Hero extends Mover {
                 while (pause != 0) {
                     geraakt = true;
 
-                    setImage("p1_hurt.png");
+                    setImage("p" + player + "_hurt.png");
                     heartFull = true;
 
                     pause--;

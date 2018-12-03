@@ -19,6 +19,8 @@ public class MyWorld extends World {
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
         
+        
+        
         int[][] testmap = {
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,},
         {-1,-1,24,-1,23,-1,27,13,-1,22,},
