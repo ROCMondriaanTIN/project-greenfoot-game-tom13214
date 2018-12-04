@@ -8,6 +8,7 @@ import greenfoot.*;
 public class Hero extends Mover {
 
     static boolean heartFull;
+    static int world = 1;
 
     private double gravity;
     private double acc;
@@ -89,9 +90,7 @@ public class Hero extends Mover {
         walkIm10 = new GreenfootImage("p1_walk10.png");
         walkIm11 = new GreenfootImage("p1_walk11.png");
 
-        
         //Greenfoot.setWorld(new testmap);
-        
         //P1 = new GreenfootImage("p1_walk01");
         //P2 = new GreenfootImage("p2_walk01");
         //P3 = new GreenfootImage("p3_walk01");
@@ -106,7 +105,7 @@ public class Hero extends Mover {
     @Override
     public void act() {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
-            
+
             if (tile.getImage().toString().contains("hud_p1Alt.png")) {
                 getImage().scale(60, 90);
                 acc = 0.7;
@@ -122,7 +121,7 @@ public class Hero extends Mover {
                 acc = 1.5;
                 player = 3;
             }
-            
+
             if (tile.getImage().toString().contains("gemBlue")) {
                 removeTile(tile);
                 collectGem = true;
@@ -176,6 +175,18 @@ public class Hero extends Mover {
             //setImage("p1_walk6.png");
         }
 
+        
+        if (Greenfoot.isKeyDown("o")) {
+            if (world == 1) {
+                Greenfoot.setWorld(new MyWorld2());
+                world = 2;
+            } else if (world == 2) {
+                Greenfoot.setWorld(new MyWorld());
+                world = 1;
+            }
+        }
+        
+
         /*
         if (Greenfoot.isKeyDown("1")) {
             setImage("p1_walk1.png");
@@ -189,6 +200,7 @@ public class Hero extends Mover {
             setImage("p3_walk1.png");
         }
          */
+        
         for (Tile tile : getIntersectingObjects(Tile.class)) {
             if (tile != null) {
                 if (tile.getImage().toString().contains("star") && tile.getImage().getTransparency() != 0) {

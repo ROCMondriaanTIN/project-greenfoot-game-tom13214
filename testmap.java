@@ -8,6 +8,9 @@
  *
  * @author Tom Vollebregt
  */
-public class intro {
+public class testmap {
+
+    public testmap() {
+    }
     
 }
