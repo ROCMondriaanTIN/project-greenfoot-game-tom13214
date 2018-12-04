@@ -11,7 +11,7 @@ public class Hero extends Mover {
     static int world = 1;
 
     private double gravity;
-    private double acc;
+    private double acc = 1;
     private double drag;
     private GreenfootImage walkIm1;
     private GreenfootImage walkIm2;
@@ -108,12 +108,12 @@ public class Hero extends Mover {
 
             if (tile.getImage().toString().contains("hud_p1Alt.png")) {
                 getImage().scale(60, 90);
-                acc = 0.7;
+                acc = 1;
                 player = 1;
             }
             if (tile.getImage().toString().contains("hud_p2Alt.png")) {
-                getImage().scale(45, 60);
-                acc = 1;
+                getImage().scale(50, 70);
+                acc = 0.7;
                 player = 2;
             }
             if (tile.getImage().toString().contains("hud_p3Alt.png")) {
@@ -121,6 +121,8 @@ public class Hero extends Mover {
                 acc = 1.5;
                 player = 3;
             }
+            
+            
 
             if (tile.getImage().toString().contains("gemBlue")) {
                 removeTile(tile);
@@ -162,16 +164,19 @@ public class Hero extends Mover {
 
         if (Greenfoot.isKeyDown("1")) {
             player = 1;
+            acc = 1;
             //setImage("p1_walk1.png");
         }
 
         if (Greenfoot.isKeyDown("2")) {
             player = 2;
+            acc = 0.7;
             //setImage("p1_stand.png");
         }
 
         if (Greenfoot.isKeyDown("3")) {
             player = 3;
+            acc = 1.5;
             //setImage("p1_walk6.png");
         }
 
