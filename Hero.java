@@ -89,6 +89,9 @@ public class Hero extends Mover {
         walkIm10 = new GreenfootImage("p1_walk10.png");
         walkIm11 = new GreenfootImage("p1_walk11.png");
 
+        
+        //Greenfoot.setWorld(new testmap);
+        
         //P1 = new GreenfootImage("p1_walk01");
         //P2 = new GreenfootImage("p2_walk01");
         //P3 = new GreenfootImage("p3_walk01");
@@ -115,7 +118,7 @@ public class Hero extends Mover {
                 player = 2;
             }
             if (tile.getImage().toString().contains("hud_p3Alt.png")) {
-                getImage().scale(30, 50);
+                getImage().scale(35, 50);
                 acc = 1.5;
                 player = 3;
             }

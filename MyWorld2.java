@@ -1,11 +1,10 @@
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  *
  * @author R. Springer
  */
-public class MyWorld extends World {
+public class MyWorld2 extends World {
     
     
 
@@ -15,7 +14,7 @@ public class MyWorld extends World {
      * Constructor for objects of class MyWorld.
      *
      */
-    public MyWorld() {
+    public MyWorld2() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
@@ -56,7 +55,7 @@ public class MyWorld extends World {
         };
 
         // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
-        TileEngine te = new TileEngine(this, 60, 60, map);
+        TileEngine te = new TileEngine(this, 60, 60, testmap);
         // Declarenre en initialiseren van de camera klasse met de TileEngine klasse 
         // zodat de camera weet welke tiles allemaal moeten meebewegen met de camera
         Camera camera = new Camera(te);
@@ -71,8 +70,8 @@ public class MyWorld extends World {
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        addObject(hero, 350, 500);
-        //addObject(hero, 10, 10);
+        //addObject(hero, 350, 500);
+        addObject(hero, 10, 10);
         //addObject(hero, 3000, 200);
         addObject(new Enemy(), 3800, 530);
         addObject(new KeyBlue(), 30, 25);
