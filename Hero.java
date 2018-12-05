@@ -75,7 +75,7 @@ public class Hero extends Mover {
         this.counter = coinCounter;
 
         gravity = 9.8;
-        acc = 0.6;
+        acc = 1;
         drag = 0.8;
 
         walkIm1 = new GreenfootImage("p1_walk1.png");
@@ -105,6 +105,8 @@ public class Hero extends Mover {
     @Override
     public void act() {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
+            
+            
 
             if (tile.getImage().toString().contains("hud_p1Alt.png")) {
                 getImage().scale(60, 90);
@@ -121,8 +123,6 @@ public class Hero extends Mover {
                 acc = 1.5;
                 player = 3;
             }
-            
-            
 
             if (tile.getImage().toString().contains("gemBlue")) {
                 removeTile(tile);
@@ -158,6 +158,10 @@ public class Hero extends Mover {
 
         }
 
+        if (Greenfoot.isKeyDown("r")) {
+            levens = 0;
+        }
+        
         if (Greenfoot.isKeyDown("p")) {
             velocityY = -20;
         }
@@ -165,32 +169,34 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("1")) {
             player = 1;
             acc = 1;
+            getImage().scale(60, 90);
             //setImage("p1_walk1.png");
         }
 
         if (Greenfoot.isKeyDown("2")) {
             player = 2;
             acc = 0.7;
+            getImage().scale(50, 70);
             //setImage("p1_stand.png");
         }
 
         if (Greenfoot.isKeyDown("3")) {
             player = 3;
             acc = 1.5;
+            getImage().scale(35, 50);
             //setImage("p1_walk6.png");
         }
 
-        
         if (Greenfoot.isKeyDown("o")) {
             if (world == 1) {
-                Greenfoot.setWorld(new MyWorld2());
                 world = 2;
+                Greenfoot.setWorld(new MyWorld2());
             } else if (world == 2) {
-                Greenfoot.setWorld(new MyWorld());
                 world = 1;
+                Greenfoot.setWorld(new MyWorld());
             }
         }
-        
+
 
         /*
         if (Greenfoot.isKeyDown("1")) {
@@ -205,7 +211,6 @@ public class Hero extends Mover {
             setImage("p3_walk1.png");
         }
          */
-        
         for (Tile tile : getIntersectingObjects(Tile.class)) {
             if (tile != null) {
                 if (tile.getImage().toString().contains("star") && tile.getImage().getTransparency() != 0) {
@@ -258,7 +263,9 @@ public class Hero extends Mover {
                 while (pause != 0) {
                     geraakt = true;
 
+                    
                     setImage("p" + player + "_hurt.png");
+                    
                     heartFull = true;
 
                     pause--;

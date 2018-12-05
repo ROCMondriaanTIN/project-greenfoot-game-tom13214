@@ -4,7 +4,7 @@ import greenfoot.*;
  *
  * @author R. Springer
  */
-public class Enemy extends Mover {
+public class Enemy2 extends Mover {
 
     private int walkRange;
     private int xMin;
@@ -12,7 +12,7 @@ public class Enemy extends Mover {
     private boolean firstAct;
     private int speed;
 
-    public Enemy() {
+    public Enemy2() {
         super();
         setImage("blockerMad.png");
         getImage().mirrorHorizontally();

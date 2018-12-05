@@ -74,6 +74,7 @@ public class MyWorld2 extends World {
         addObject(hero, 10, 10);
         //addObject(hero, 3000, 200);
         addObject(new Enemy(), 3800, 530);
+        addObject(new Enemy2(), 3800, 575);
         addObject(new KeyBlue(), 30, 25);
         addObject(new KeyRed(), 80, 25);
         addObject(new KeyGreen(), 130, 25);
