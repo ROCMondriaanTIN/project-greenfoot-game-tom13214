@@ -188,6 +188,9 @@ public class Hero extends Mover {
         }
 
         if (Greenfoot.isKeyDown("o")) {
+        
+        Greenfoot.setWorld(new StartScreen());
+        /*
             if (world == 1) {
                 world = 2;
                 Greenfoot.setWorld(new MyWorld2());
@@ -195,6 +198,7 @@ public class Hero extends Mover {
                 world = 1;
                 Greenfoot.setWorld(new MyWorld());
             }
+        */
         }
 
 

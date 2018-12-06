@@ -18,7 +18,7 @@ public class Knop extends Actor
         setImage("knop.png");
         if (Greenfoot.mouseClicked(this))
         {
-            StartScreen.start = true;
+            Greenfoot.setWorld(new MyWorld2());
         }
         // Add your action code here.
     }    

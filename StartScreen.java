@@ -18,19 +18,9 @@ public class StartScreen extends World
     public StartScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 800, 1); 
-        
-    }
-    
-    public void act ()
-    {
-        this.setBackground("achtergrond.png");
+        super(1000, 800, 1);
+        setBackground("achtergrond.png");
         addObject(new Knop(), 500, 400);
-        if (start == true)
-        {
-            
-            Greenfoot.setWorld(new MyWorld());
-        }
         
     }
 }
