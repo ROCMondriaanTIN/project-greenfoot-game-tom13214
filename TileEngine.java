@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  *
- * @author R. Springer
+ * @author R. Springer / Tom
  */
 public class TileEngine {
 

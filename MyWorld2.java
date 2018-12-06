@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  *
- * @author R. Springer
- */
+ * @author R. Springer / Tom 
+*/
 public class MyWorld2 extends World {
     
     
@@ -82,6 +82,7 @@ public class MyWorld2 extends World {
         addObject(new Coin(), 450, 28);
         addObject(cc, 500, 30);
         addObject(new diamant(), 550, 30);
+        //addObject(new Knop(), 100, 100);
         //addObject(new intro(), 500, 500);
         
         

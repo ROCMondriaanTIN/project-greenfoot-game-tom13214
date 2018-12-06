@@ -3,7 +3,7 @@ import greenfoot.*;
 
 /**
  *
- * @author R. Springer
+ * @author R. Springer / Tom
  */
 public class Tile extends Actor {
 

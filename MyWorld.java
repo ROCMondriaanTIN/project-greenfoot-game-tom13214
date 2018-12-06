@@ -100,6 +100,7 @@ public class MyWorld extends World {
     
     @Override
     public void act() {
+        Greenfoot.setWorld(new StartScreen());
         ce.update();
         /*if (Hero.coins == 1);
         {
