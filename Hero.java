@@ -194,6 +194,14 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("0")) {
             setLocation(4000, 400);
         }
+        
+        /*
+        if (Greenfoot.isKeyDown("4")) {
+            keyCollectRed = true;
+            keyCollectBlue = true;
+            keyCollectGreen = true;
+        }
+        */
 
         if (Greenfoot.isKeyDown("o")) {
         
