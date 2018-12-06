@@ -306,6 +306,13 @@ public class Hero extends Mover {
                 break;
             }
         }
+        
+        for (Actor enemy2 : getIntersectingObjects(Enemy2.class)) {
+            if (enemy2 != null) {
+                getWorld().removeObject(this);
+                break;
+            }
+        }
     }
 
     private double invert(double x) {
