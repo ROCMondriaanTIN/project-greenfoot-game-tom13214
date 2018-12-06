@@ -186,6 +186,14 @@ public class Hero extends Mover {
             getImage().scale(35, 50);
             //setImage("p1_walk6.png");
         }
+        
+        if (Greenfoot.isKeyDown("9")) {
+            setLocation(300, 200);
+        }
+        
+        if (Greenfoot.isKeyDown("0")) {
+            setLocation(4000, 400);
+        }
 
         if (Greenfoot.isKeyDown("o")) {
         
