@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="70" height="20" tilewidth="70" tileheight="70" infinite="0" nextlayerid="2" nextobjectid="1">
+ <tileset firstgid="1" name="fence" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/fence.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="2" name="grassHalf" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/grassHalf.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="3" name="castle" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/castle.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="4" name="castleCenter" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/castleCenter.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="5" name="coinGold" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Items/coinGold.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="6" name="dirtCenter" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/dirtCenter.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="7" name="fenceBroken" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/fenceBroken.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="8" name="liquidWaterTop_mid" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/liquidWaterTop_mid.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="9" name="bridgeLogs" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/bridgeLogs.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="10" name="tochLit" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/tochLit.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="11" name="ladder_mid" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/ladder_mid.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="12" name="grassCliffRight" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/grassCliffRight.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="13" name="liquidWater" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/liquidWater.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="14" name="grassCenter" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/grassCenter.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="15" name="dirtMid" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/dirtMid.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="16" name="grassMid" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/grassMid.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="17" name="dirtHalf" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/dirtHalf.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="18" name="lock_green" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/lock_green.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="19" name="door_openMid" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/door_openMid.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="20" name="boxEmpty" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/boxEmpty.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="21" name="signRight" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/signRight.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="22" name="lock_blue" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/lock_blue.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="23" name="keyBlue" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Items/keyBlue.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="24" name="keyRed" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Items/keyRed.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="25" name="lock_red" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/lock_red.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="26" name="door_openTop" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/door_openTop.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="27" name="keyGreen" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Items/keyGreen.png" width="70" height="70"/>
+ </tileset>
+ <tileset firstgid="28" name="spikes" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+  <image source="../../../../Downloads/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Items/spikes.png" width="70" height="70"/>
+ </tileset>
+ <layer id="1" name="Tilelaag 1" width="70" height="20" offsetx="0.00216225" offsety="0.00328283">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,2,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,2,0,0,0,2,0,2,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,2,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,2,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,2,0,2,0,0,0,2,0,2,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,2,0,2,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+16,16,16,16,16,16,16,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,
+14,14,14,14,14,14,14,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,
+14,14,14,14,14,14,14,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,
+14,14,14,14,14,14,14,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,
+14,14,14,14,14,14,14,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13
+</data>
+ </layer>
+</map>

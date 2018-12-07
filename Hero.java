@@ -127,6 +127,7 @@ public class Hero extends Mover {
             
             
             if (tile.getImage().toString().contains("door_open")) {
+                Greenfoot.setWorld(new MyWorld2());
                 setLocation(300, 200);
             }
             
@@ -183,42 +184,42 @@ public class Hero extends Mover {
 
         }
 
-        if (Greenfoot.isKeyDown("r")) {
+        if (Greenfoot.isKeyDown("q")) {
             levens = 0;
         }
 
-        if (Greenfoot.isKeyDown("p")) {
-            velocityY = -20;
-        }
-
-        if (Greenfoot.isKeyDown("1")) {
-            player = 1;
-            acc = 1;
-            getImage().scale(50, 70);
-            //setImage("p1_walk1.png");
-        }
-
-        if (Greenfoot.isKeyDown("2")) {
-            player = 2;
-            acc = 0.7;
-            getImage().scale(60, 90);
-            //setImage("p1_stand.png");
-        }
-
-        if (Greenfoot.isKeyDown("3")) {
-            player = 3;
-            acc = 1.5;
-            getImage().scale(35, 50);
-            //setImage("p1_walk6.png");
-        }
-
-        if (Greenfoot.isKeyDown("9")) {
-            setLocation(300, 200);
-        }
-
-        if (Greenfoot.isKeyDown("0")) {
-            setLocation(4000, 400);
-        }
+//        if (Greenfoot.isKeyDown("p")) {
+//            velocityY = -20;
+//        }
+//
+//        if (Greenfoot.isKeyDown("1")) {
+//            player = 1;
+//            acc = 1;
+//            getImage().scale(50, 70);
+//            //setImage("p1_walk1.png");
+//        }
+//
+//        if (Greenfoot.isKeyDown("2")) {
+//            player = 2;
+//            acc = 0.7;
+//            getImage().scale(60, 90);
+//            //setImage("p1_stand.png");
+//        }
+//
+//        if (Greenfoot.isKeyDown("3")) {
+//            player = 3;
+//            acc = 1.5;
+//            getImage().scale(35, 50);
+//            //setImage("p1_walk6.png");
+//        }
+//
+//        if (Greenfoot.isKeyDown("9")) {
+//            setLocation(300, 200);
+//        }
+//
+//        if (Greenfoot.isKeyDown("0")) {
+//            setLocation(4000, 400);
+//        }
 
         /*
         if (Greenfoot.isKeyDown("4")) {
@@ -227,17 +228,17 @@ public class Hero extends Mover {
             keyCollectGreen = true;
         }
          */
-        if (Greenfoot.isKeyDown("o")) {
+        if (Greenfoot.isKeyDown("r")) {
             Greenfoot.setWorld(new StartScreen());
         }
 
-        if (Greenfoot.isKeyDown("i")) {
-            Greenfoot.setWorld(new MyWorld());
-        }
+      //  if (Greenfoot.isKeyDown("e")) {
+     //       Greenfoot.setWorld(new MyWorld());
+     //   }
 
-        if (Greenfoot.isKeyDown("u")) {
-            Greenfoot.setWorld(new MyWorld2());
-        }
+//        if (Greenfoot.isKeyDown("u")) {
+//            Greenfoot.setWorld(new MyWorld2());
+//        }
         /*
             if (world == 1) {
                 world = 2;
