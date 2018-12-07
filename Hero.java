@@ -307,6 +307,29 @@ public class Hero extends Mover {
                 levens--;
                 System.out.println(levens);
             }
+            
+            if (tile.getImage().toString().contains("spikes")) {
+
+                while (pause != 0) {
+                    geraakt = true;
+
+                    
+                    setImage("p" + player + "_hurt.png");
+                    
+                    heartFull = true;
+
+                    pause--;
+                    return;
+                }
+                pause = 50;
+
+                setLocation(300, 200);
+                setImage("p1.png");
+                geraakt = false;
+
+                levens--;
+                System.out.println(levens);
+            }
 
             if (levens == 0) {
                 setLocation(300, 200);
