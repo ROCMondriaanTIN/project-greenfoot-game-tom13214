@@ -28,6 +28,8 @@ public class Hero extends Mover {
     private GreenfootImage P1;
     private GreenfootImage P2;
     private GreenfootImage P3;
+    
+    private boolean start;
 
     public static boolean collectGem;
 
@@ -101,20 +103,25 @@ public class Hero extends Mover {
         tile.getImage().setTransparency(0);
         tile.isSolid = false;
     }
+    
+    
 
     @Override
     public void act() {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
             
-            
+            if (start == false){
+            getImage().scale(50, 70);
+            start = true;
+            }
 
             if (tile.getImage().toString().contains("hud_p1Alt.png")) {
-                getImage().scale(60, 90);
+                getImage().scale(50, 70);
                 acc = 1;
                 player = 1;
             }
             if (tile.getImage().toString().contains("hud_p2Alt.png")) {
-                getImage().scale(50, 70);
+                getImage().scale(60, 90);
                 acc = 0.7;
                 player = 2;
             }
@@ -169,14 +176,14 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("1")) {
             player = 1;
             acc = 1;
-            getImage().scale(60, 90);
+            getImage().scale(50, 70);
             //setImage("p1_walk1.png");
         }
 
         if (Greenfoot.isKeyDown("2")) {
             player = 2;
             acc = 0.7;
-            getImage().scale(50, 70);
+            getImage().scale(60, 90);
             //setImage("p1_stand.png");
         }
 
