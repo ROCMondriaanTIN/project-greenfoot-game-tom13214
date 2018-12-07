@@ -151,6 +151,15 @@ public class TileFactory {
                 tile = new Tile("grassCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = false;
                 break;
+            case 37:
+                tile = new Tile("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.isSolid = false;
+                break;
+            case 38:
+                tile = new Tile("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.isSolid = false;
+                break;
+                
                 
             default:
                 tile = new Tile("keyRed.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

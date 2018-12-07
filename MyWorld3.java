@@ -1,11 +1,10 @@
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  *
  * @author R. Springer
  */
-public class MyWorld extends World {
+public class MyWorld3 extends World {
     
     
 
@@ -15,7 +14,7 @@ public class MyWorld extends World {
      * Constructor for objects of class MyWorld.
      *
      */
-    public MyWorld() {
+    public MyWorld3() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         System.out.println("world loaded");
@@ -52,7 +51,7 @@ public class MyWorld extends World {
 {14,14,14,14,-1,56,-1,24,-1,-1,-1,16,16,12,-1,-1,-1,-1,-1,2,-1,-1,15,15,15,-1,-1,15,-1,-1,15,6,6,14,6,6,-1,3,-1,14,-1,3,-1,-1,25,-1,-1,-1,1073741833,-1,-1,-1,-1,-1,-1,-1,14,14,-1,-1,14,14,14,14,14,14,14,14,14,14},
 {14,14,14,14,-1,3,-1,3,-1,-1,14,14,14,-1,-1,-1,2,-1,-1,-1,-1,-1,6,6,6,50,50,50,50,50,6,6,6,6,6,14,6,14,14,14,14,14,14,14,14,14,-1,-1,-1,-1,-1,-1,-1,1073741833,-1,-1,14,14,-1,-1,14,14,14,14,14,14,14,14,14,14},
 {14,14,14,14,14,14,14,14,14,14,14,14,14,8,8,8,8,8,8,8,8,8,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,14,6,14,14,14,14,14,-1,-1,-1,-1,1073741833,-1,-1,-1,-1,-1,14,14,-1,-1,14,14,14,14,14,14,14,14,14,14},
-{14,14,14,14,14,14,14,14,14,14,14,14,14,13,13,13,13,13,13,13,13,13,6,6,6,6,6,6,6,6,6,6,6,14,6,6,14,6,14,6,14,14,6,14,14,8,8,8,8,8,8,8,8,8,8,8,14,14,37,37,14,14,14,14,14,14,14,14,14,14},
+{14,14,14,14,14,14,14,14,14,14,14,14,14,13,13,13,13,13,13,13,13,13,6,6,6,6,6,6,6,6,6,6,6,14,6,6,14,6,14,6,14,14,6,14,14,8,8,8,8,8,8,8,8,8,8,8,14,14,-1,-1,14,14,14,14,14,14,14,14,14,14},
 {14,14,14,14,14,14,14,14,14,14,14,14,14,13,13,13,13,13,13,13,13,13,6,6,6,6,6,6,6,6,6,6,6,6,14,6,6,14,6,14,6,14,14,14,14,13,13,13,13,13,13,13,13,13,13,13,14,14,14,14,14,14,14,14,14,14,14,14,14,14},
         };
 
@@ -92,6 +91,10 @@ public class MyWorld extends World {
         ce = new CollisionEngine(te, camera);
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
+    }
+
+    MyWorld3() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
        
     

@@ -28,7 +28,7 @@ public class Hero extends Mover {
     private GreenfootImage P1;
     private GreenfootImage P2;
     private GreenfootImage P3;
-    
+
     private boolean start;
 
     public static boolean collectGem;
@@ -97,23 +97,41 @@ public class Hero extends Mover {
         //P2 = new GreenfootImage("p2_walk01");
         //P3 = new GreenfootImage("p3_walk01");
         setImage("p1_stand.png");
+        
     }
 
     private void removeTile(Tile tile) {
         tile.getImage().setTransparency(0);
         tile.isSolid = false;
     }
-    
-    
 
     @Override
     public void act() {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
+
             
-            if (start == false){
-            getImage().scale(50, 70);
-            start = true;
+//            int xMin = getImage().getWidth() / 2;
+//        int xMax = TileEngine.MAP_WIDTH * TileEngine.TILE_WIDTH - xMin;
+//        if (getX() <= xMin) {
+//            setLocation(xMin, getY());
+//            velocityX = 0;
+//        } else if (getX() >= xMax) {
+//            setLocation(xMax, getY());
+//            velocityX = 0;
+//        }
+            
+            if (start == false) {
+                getImage().scale(50, 70);
+                start = true;
             }
+            
+            
+            if (tile.getImage().toString().contains("door_open")) {
+                setLocation(300, 200);
+            }
+            
+            
+            
 
             if (tile.getImage().toString().contains("hud_p1Alt.png")) {
                 getImage().scale(50, 70);
@@ -168,7 +186,7 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("r")) {
             levens = 0;
         }
-        
+
         if (Greenfoot.isKeyDown("p")) {
             velocityY = -20;
         }
@@ -193,26 +211,33 @@ public class Hero extends Mover {
             getImage().scale(35, 50);
             //setImage("p1_walk6.png");
         }
-        
+
         if (Greenfoot.isKeyDown("9")) {
             setLocation(300, 200);
         }
-        
+
         if (Greenfoot.isKeyDown("0")) {
             setLocation(4000, 400);
         }
-        
+
         /*
         if (Greenfoot.isKeyDown("4")) {
             keyCollectRed = true;
             keyCollectBlue = true;
             keyCollectGreen = true;
         }
-        */
-
+         */
         if (Greenfoot.isKeyDown("o")) {
-        
-        Greenfoot.setWorld(new StartScreen());
+            Greenfoot.setWorld(new StartScreen());
+        }
+
+        if (Greenfoot.isKeyDown("i")) {
+            Greenfoot.setWorld(new MyWorld());
+        }
+
+        if (Greenfoot.isKeyDown("u")) {
+            Greenfoot.setWorld(new MyWorld2());
+        }
         /*
             if (world == 1) {
                 world = 2;
@@ -221,11 +246,9 @@ public class Hero extends Mover {
                 world = 1;
                 Greenfoot.setWorld(new MyWorld());
             }
-        */
-        }
+         */
 
-
-        /*
+ /*
         if (Greenfoot.isKeyDown("1")) {
             setImage("p1_walk1.png");
         }
@@ -283,16 +306,17 @@ public class Hero extends Mover {
             }
         }
 
-        for (Tile tile : getIntersectingObjects(Tile.class)) {
+        for (Tile tile
+                : getIntersectingObjects(Tile.class
+                )) {
             //Tile tile = (Tile) actor;
             if (tile.getImage().toString().contains("Water")) {
 
                 while (pause != 0) {
                     geraakt = true;
 
-                    
                     setImage("p" + player + "_hurt.png");
-                    
+
                     heartFull = true;
 
                     pause--;
@@ -307,15 +331,14 @@ public class Hero extends Mover {
                 levens--;
                 System.out.println(levens);
             }
-            
+
             if (tile.getImage().toString().contains("spikes")) {
 
                 while (pause != 0) {
                     geraakt = true;
 
-                    
                     setImage("p" + player + "_hurt.png");
-                    
+
                     heartFull = true;
 
                     pause--;
@@ -340,7 +363,9 @@ public class Hero extends Mover {
             }
             continue;
         }
+
         updateOnGroundStats();
+
         handleInput();
 
         velocityX *= drag;
@@ -348,16 +373,21 @@ public class Hero extends Mover {
         if (velocityY > gravity) {
             velocityY = gravity;
         }
+
         applyVelocity();
 
-        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
+        for (Actor enemy
+                : getIntersectingObjects(Enemy.class
+                )) {
             if (enemy != null) {
                 getWorld().removeObject(this);
                 break;
             }
         }
-        
-        for (Actor enemy2 : getIntersectingObjects(Enemy2.class)) {
+
+        for (Actor enemy2
+                : getIntersectingObjects(Enemy2.class
+                )) {
             if (enemy2 != null) {
                 getWorld().removeObject(this);
                 break;
@@ -377,24 +407,30 @@ public class Hero extends Mover {
         if (velocityY != 0) {
             isOnGround = false;
             return;
+
         }
         //checks tile exacly under hero
-        for (Tile tile : getObjectsAtOffset(0, dy, Tile.class)) {
+        for (Tile tile : getObjectsAtOffset(0, dy, Tile.class
+        )) {
             if (tile.isSolid) {
                 isOnGround = true;
             }
             break;
+
         }
         //checks if hero is on the edge of a block
         if (!isOnGround) {
-            for (Tile tile : getObjectsAtOffset(dx - 3, dy, Tile.class)) {
+            for (Tile tile : getObjectsAtOffset(dx - 3, dy, Tile.class
+            )) {
                 if (tile.isSolid) {
                     isOnGround = true;
                 }
                 break;
+
             }
             if (!isOnGround) {
-                for (Tile tile : getObjectsAtOffset(dx * -1 + 3, dy, Tile.class)) {
+                for (Tile tile : getObjectsAtOffset(dx * -1 + 3, dy, Tile.class
+                )) {
                     if (tile.isSolid) {
                         isOnGround = true;
                     }
@@ -464,7 +500,6 @@ public class Hero extends Mover {
 
     public void mirror() {
         if (direction.equals("left")) {
-
             getImage().mirrorHorizontally();
 
         }
